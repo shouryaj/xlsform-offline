@@ -325,7 +325,7 @@ class MainFrame(wx.Frame):
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 
         java_version = None
-        java_regex = re.compile('(java|openjdk) version')
+        java_regex = re.compile(b'(java|openjdk) version')
         try:
             java_version = subprocess.Popen(['java', '-version'], stderr=subprocess.PIPE, stdin=subprocess.PIPE,
                                             stdout=subprocess.PIPE, shell=False, startupinfo=startupinfo).communicate()[
