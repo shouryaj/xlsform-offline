@@ -11,7 +11,7 @@ find . -name '*.pyc' -type f -delete;
 
 echo "Creating new build";
 # pyinstaller pkg/xlsform-offline-mac.spec --onefile --windowed --noconfirm --clean --log-level=DEBUG;
-pyinstaller src/main.py --onefile --onedir --windowed --noconfirm --clean;
+pyinstaller pkg/main.spec --onefile --onedir --windowed --noconfirm --clean;
 
 if [[ -e "$BINARY" ]]; then
 	echo 'Adding version info';
