@@ -12,7 +12,6 @@ for path in site.getsitepackages():
 block_cipher = None
 
 a = Analysis(['..\\src\\main.py'],
-    pathex=['C:\\Users\\piete\\Desktop\\UW\\Junior Year\\Winter Quarter\\xlsform-offline'],
     binaries=[],
     datas=[],
     hiddenimports=[],
