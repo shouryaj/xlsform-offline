@@ -11,7 +11,7 @@ for path in site.getsitepackages():
 
 block_cipher = None
 
-a = Analysis(['..\\src\\main.py'],
+a = Analysis(['../src/main.py'],
     binaries=[],
     datas=[],
     hiddenimports=[],
@@ -38,9 +38,9 @@ coll = COLLECT(exe,
       a.binaries,
       a.zipfiles,
       a.datas,
-      [('res\\about.html', os.getcwd() + 'src\\res\\about.html', 'DATA')],
-      [('pyxform\\validators\\odk_validate\\bin\\ODK_Validate.jar', validate_path, 'DATA')],
-      [('pyxform\\iana_subtags.txt', iana_path, 'DATA')],
+      [('res/about.html', os.getcwd() + 'src/res/about.html', 'DATA')],
+      [('pyxform/validators/odk_validate/bin/ODK_Validate.jar', validate_path, 'DATA')],
+      [('pyxform/iana_subtags.txt', iana_path, 'DATA')],
       strip=False,
       upx=True,
       upx_exclude=[],
