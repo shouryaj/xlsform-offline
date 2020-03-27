@@ -312,7 +312,7 @@ class MainFrame(wx.Frame):
             self.status_text_ctrl.AppendText(event.data)
 
     def on_progress(self, event):
-        if self.result_thread is not None and self.result_thread.isAlive():
+        if self.result_thread is not None and self.result_thread.is_alive():
             self.status_gauge.Pulse()
 
     @staticmethod

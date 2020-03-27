@@ -1,3 +1,5 @@
+# -*- mode: python -*-
+
 import site;
 for path in site.getsitepackages():
     test_validate_path = os.path.join(path, 'pyxform/validators/odk_validate/bin/ODK_Validate.jar')
@@ -11,11 +13,11 @@ a = Analysis(['../src/main.py'])
 pyz = PYZ(a.pure, a.zipped_data)
 exe = EXE(pyz,
           a.scripts,
-          a.binaries,
-          [('res\\about.html', os.getcwd() + '\\src\\res\\about.html', 'DATA')],
-          [('pyxform\\validators\\odk_validate\\bin\\ODK_Validate.jar', validate_path, 'DATA')],
-          [('pyxform\\iana_subtags.txt', iana_path, 'DATA')],
+          [],
+          exclude_binaries=True,
           name='ODK Xlsform Offline.exe',
+          icon='icon.ico',
+          debug=False,
           upx=True,
           console=False
 )
