@@ -12,7 +12,7 @@ for path in site.getsitepackages():
 block_cipher = None
 
 
-a = Analysis(['src\\main.py'],
+a = Analysis(['..\\src\\main.py'],
              pathex=['C:\\Users\\piete\\Desktop\\UW\\xlsform-offline'],
              binaries=[],
              datas=[],
@@ -31,11 +31,11 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          [('res\\about.html', os.getcwd() + '\\src\\res\\about.html', 'DATA')],
+          [('..\\res\\about.html', os.getcwd() + '\\src\\res\\about.html', 'DATA')],
           [('pyxform\\validators\\odk_validate\\bin\\ODK_Validate.jar', validate_path, 'DATA')],
           [('pyxform\\iana_subtags.txt', iana_path, 'DATA')],
           name='ODK XLSform Offline.exe',
-          icon='pkg\icon.ico',
+          icon='..\\pkg\icon.ico',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
