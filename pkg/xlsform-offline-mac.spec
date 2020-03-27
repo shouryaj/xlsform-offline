@@ -34,6 +34,6 @@ coll = COLLECT(exe,
                name='ODK XLSForm Offline')
 app = BUNDLE(coll,
              name='ODK XLSForm Offline.app',
-             icon='pkg/icon.icns',
+             icon='icon.icns',
              info_plist={ 'NSHighResolutionCapable': 'True' },
              bundle_identifier=None)
