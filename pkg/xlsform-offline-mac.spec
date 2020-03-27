@@ -1,4 +1,4 @@
-# -*- mode: python ; coding: utf-8 -*-
+# -*- mode: python -*-
 
 import site;
 for path in site.getsitepackages():
@@ -9,21 +9,8 @@ for path in site.getsitepackages():
     if os.path.exists(test_iana_path):
         iana_path = test_iana_path
 
-block_cipher = None
-
-a = Analysis(['../src/main.py'],
-             binaries=[],
-             datas=[],
-             hiddenimports=[],
-             hookspath=[],
-             runtime_hooks=[],
-             excludes=[],
-             win_no_prefer_redirects=False,
-             win_private_assemblies=False,
-             cipher=block_cipher,
-             noarchive=False)
-pyz = PYZ(a.pure, a.zipped_data,
-             cipher=block_cipher)
+a = Analysis(['../src/main.py'])
+pyz = PYZ(a.pure, a.zipped_data)
 exe = EXE(pyz,
           a.scripts,
           [],
@@ -47,6 +34,6 @@ coll = COLLECT(exe,
                name='ODK XLSForm Offline')
 app = BUNDLE(coll,
              name='ODK XLSForm Offline.app',
-             icon='icon.icns',
+             icon='pkg/icon.icns',
              info_plist={ 'NSHighResolutionCapable': 'True' },
              bundle_identifier=None)
