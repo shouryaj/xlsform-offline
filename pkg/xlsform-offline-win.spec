@@ -13,7 +13,6 @@ block_cipher = None
 
 
 a = Analysis(['..\\src\\main.py'],
-             pathex=['C:\\Users\\piete\\Desktop\\UW\\xlsform-offline'],
              binaries=[],
              datas=[],
              hiddenimports=[],
