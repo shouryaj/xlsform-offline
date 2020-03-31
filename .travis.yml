@@ -4,7 +4,7 @@ dist: xenial
 addons:
   artifacts:
     paths:
-      - ./dist/mac/ODK-XLSForm-Offline-macOS.zip
+      - ./dist/mac
       - ./dist/win
     target_paths:
       - ${TRAVIS_BUILD_NUMBER}
