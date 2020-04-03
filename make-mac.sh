@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-VERSION=$(grep VERSION src/main.py | sed -e "s|.*'\(.*\)'|\1|");
+VERSION=$(git describe --tags --dirty --always);
 BINARY='dist/mac/ODK XLSForm Offline.app';
 
 echo "Removing build and dist";
