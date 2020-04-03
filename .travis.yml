@@ -3,13 +3,13 @@ dist: xenial
 
 env:
   global:
-  - BIN_NAME=git describe --tags --dirty --always
+  - BIN_NAME=$(git describe --tags --dirty --always)
   - CONST_VAR="binNameTest"
 
 addons:
   artifacts:
     paths:
-      - ./dist/mac/ODK-XLSForm-Offline-macOS-${BIN_NAME}.zip
+      - ./dist/mac
       - ./dist/win
     target_paths:
       - ${TRAVIS_BUILD_NUMBER}
@@ -28,7 +28,7 @@ matrix:
         - ./make-mac.sh
         - ./make-dist.sh
         # This line is what renames the file to include the git hash.
-        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-${BIN_NAME}.zip
+        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-${CONST_VAR}.zip
         - echo "TESTING VAR NAMES"
         - echo ${BIN_NAME}
         - echo ${CONST_VAR}
