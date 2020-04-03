@@ -1,10 +1,14 @@
 language: python
 dist: xenial
 
+env:
+  global:
+  - BIN_NAME="oogaBoog"
+
 addons:
   artifacts:
     paths:
-      - ./dist/mac/ODK-XLSForm-Offline-macOS-binName.zip
+      - ./dist/mac/ODK-XLSForm-Offline-macOS-${BIN_NAME}.zip
       - ./dist/win
     target_paths:
       - ${TRAVIS_BUILD_NUMBER}
@@ -22,7 +26,7 @@ matrix:
       script:
         - ./make-mac.sh
         - ./make-dist.sh
-        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-binName.zip
+        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-${BIN_NAME}.zip
     - os: windows
       language: sh
       python: "3.6"
