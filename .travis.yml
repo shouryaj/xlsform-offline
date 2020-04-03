@@ -4,7 +4,7 @@ dist: xenial
 addons:
   artifacts:
     paths:
-      - ./dist/mac/ODK-XLSForm-Offline-macOS.zip
+      - ./dist/mac/ODK-XLSForm-Offline-macOS-binName.zip
       - ./dist/win
     target_paths:
       - ${TRAVIS_BUILD_NUMBER}
@@ -22,6 +22,7 @@ matrix:
       script:
         - ./make-mac.sh
         - ./make-dist.sh
+        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-binName.zip
     - os: windows
       language: sh
       python: "3.6"
