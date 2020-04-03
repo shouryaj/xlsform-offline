@@ -11,7 +11,6 @@ for path in site.getsitepackages():
 
 block_cipher = None
 
-
 a = Analysis(['..\\src\\main.py'],
              binaries=[],
              datas=[],
@@ -33,7 +32,6 @@ exe = EXE(pyz,
           [('..\\res\\about.html', os.getcwd() + '\\src\\res\\about.html', 'DATA')],
           [('pyxform\\validators\\odk_validate\\bin\\ODK_Validate.jar', validate_path, 'DATA')],
           [('pyxform\\iana_subtags.txt', iana_path, 'DATA')],
-          name='ODK XLSform Offline.exe',
           icon='..\\pkg\icon.ico',
           debug=False,
           bootloader_ignore_signals=False,
