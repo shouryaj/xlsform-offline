@@ -37,6 +37,5 @@ matrix:
         - pip3 install pyxform
       script:
         - ./make-win.bat
-        - mv ./dist/win/${TRAVIS_BUILD_NUMBER}_ODK\ XLSForm\ Offline.exe ./dist/win/ODK\ XLSForm\ Offline${BINARY_VERSION}.exe
 
 cache: pip
