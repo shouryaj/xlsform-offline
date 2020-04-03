@@ -27,7 +27,7 @@ matrix:
       script:
         - ./make-mac.sh
         - ./make-dist.sh
-        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-binName.zip
+        - mv ./dist/mac/ODK-XLSForm-Offline-macOS.zip ./dist/mac/ODK-XLSForm-Offline-macOS-${BIN_NAME}.zip
         - echo "TESTING VAR OUTPUT"
         - echo ${BIN_NAME}
         - echo ${CONST_NAME}
